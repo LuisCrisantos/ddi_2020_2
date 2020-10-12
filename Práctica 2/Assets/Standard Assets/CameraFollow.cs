@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
 	{
 		float dist = Vector3.Distance (player.transform.position, transform.position);
 
-		Vector3 behind = player.transform.position - new Vector3 (player.transform.forward.x * distance, player.transform.forward.y + 2.0f, player.transform.forward.z * distance);
+		Vector3 behind = player.transform.position - new Vector3 (player.transform.forward.x * distance, player.transform.forward.y - 2.0f, player.transform.forward.z * distance);
 
 		if(!z && Input.GetKey(KeyCode.Z))
 		{
