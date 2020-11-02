@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    static protected Inventory s_InventoryInstance;
+    static public Inventory InventoryInstance{get{return s_InventoryInstance;}}
+
     public delegate void OnChange();
     public OnChange onChange;
 
     public int space = 23;
     public int counter = 0;
     public List <Item> items = new List <Item>();
+
+    void Awake()
+    {
+        s_InventoryInstance = this;
+    }
 
     public void Add(Item item)
     {

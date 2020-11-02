@@ -11,6 +11,7 @@ public enum ItemType
     BuffMedicine,
     Coin
 }
+
 [CreateAssetMenu(fileName = "Nuevo Item", menuName = "Inventario/Generic")]
 public class Item : ScriptableObject
 {
