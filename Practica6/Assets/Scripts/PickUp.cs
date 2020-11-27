@@ -6,20 +6,39 @@ public class PickUp : Interactable
 {
     //private Inventory inventory;
     public Item item;
-    void Start()
-    {
-       /* inventory = FindObjectOfType<Inventory>();
-        if(inventory == null)
+    public float triggerInteractionTime = 1f;
+    public float interactionTimer = 0f;
+    private bool timerRunning = false;
+
+    void Update()
         {
-            Debug.LogWarning("No se encontró el inventario");
-        }*/
+            if(timerRunning)
+            {
+                interactionTimer += Time.deltaTime;
+                if(interactionTimer > triggerInteractionTime)
+                {
+                    Interact();
+                }
+            }
+        }
+
+    public void SetGazedAt(bool gazedAt)
+    {
+        if(gazedAt)
+        {
+           timerRunning = true;
+        }
+        else
+        {
+            timerRunning = false;
+            interactionTimer = 0f;
+        }
     }
 
     public override void Interact()
     {
         if(item.itemType != ItemType.Coin)
         {
-            //inventory.Add(item);
             if(item.itemType == ItemType.RangedWeapon)
             {
                 Debug.Log("Using Bow. Bows are superefective against flying units!");
@@ -45,7 +64,6 @@ public class PickUp : Interactable
         }
         else
         {
-            //inventory.counter++;
             Debug.Log("Tomando item");
             Debug.Log("Monedas azules + 1 ");
         }

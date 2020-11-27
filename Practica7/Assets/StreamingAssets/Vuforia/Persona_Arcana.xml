@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="IX-Hermit" size="753.000000 1061.112305" />
+    <ImageTarget name="VIII-Justice" size="753.000000 1061.112305" />
+    <ImageTarget name="VII-Chariot" size="753.000000 1061.112305" />
+    <ImageTarget name="VI-Lovers" size="753.000000 1061.112305" />
+    <ImageTarget name="V-Hierophant" size="753.000000 1061.112305" />
+    <ImageTarget name="IV-Emperor" size="753.000000 1061.112305" />
+    <ImageTarget name="III-Empress" size="753.000000 1061.112305" />
+    <ImageTarget name="II-Priestess" size="753.000000 1061.112305" />
+    <ImageTarget name="I-Magician" size="753.000000 1061.112305" />
+    <ImageTarget name="0-TheFool" size="753.000000 1060.000000" />
+  </Tracking>
+</QCARConfig>

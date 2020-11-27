@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2067402452, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
+  m_Name: VuforiaConfiguration
+  m_EditorClassIdentifier: 
+  vuforia:
+    vuforiaLicenseKey: ATLU0h//////AAABmUGqdcdIgUfQmCAdaMkpITsW8dU+ya7Kp3Bg/48ggpCWcTVmRas6QRY9001V3PiqDNV6TKDn5cvU5n0ZEceOzIz0FpYnO0LYZJQzPkJRYZcmypygIvMVcaQAgraWIpRRfi4cPc54jpaJi4Qh36v0qBEtej+70HPwy8UBroRzGRUD5i8jHE0T2404zDAtElWqPvEDTABus2S4DoNyCUTlC1UG0BxfrdJz5xNja0IyylTQQY0DGrJVTo6qGpOHpYSfNVWYR8t+1PcjCMtjq4xPneM42bBNJ43VwzLjdxPbXMT8Jtprka6q/aw2xxrhaF1QQmSBIDbQPSqdBWAqL7OqZRIB1maL7DsMAbHX2kDKCNsX
+    ufoLicenseKey: QVNVazg3Yi8vLy8vQUFBQUtNSUYzN05CRWtIRHFsUXQyRzc0amN4UjBUd3FhQ0NuR2hxTGhiSDFsL3ppakxPSlJ6dGxPeUdDRnZEZnlTeGNoSWJtTEFlSlFFTGZheXl1R0NRc0ZOQ1pEekFuTVJHaW9xVWJpUzB1eEIzV0kzR0tRVVo2YytXbzd5NUtQRzQzZjVoc1VCc0VvYkJtb1MyYm12czZ5SHFIaXl3Si9mZ2V6aVVSbllCZGR3cFE4TFpCN3YrNE55THRXM1ltVXAxQ0o0UXhuZ1R4ellkSDE1ZVVtSGIva2hySEJpQkF3QTZZZTRCZ2k4WEpjaytvZ3lvbHpJMDl1VmhjL3FNemFuRXJxNC9nVGtmakpNN3hnYlEybE9pcjZaaEwyNHNvL3FqODJvVnNuZ25zN0lCWTN4V0RIWWZlS3hMWVJ6dE0yWVc4anJhTys1VzljcG0zVEZydlkvSVE2VTkxMFowTERXSzlKc1c3UE1YMUJQRDk=
+    delayedInitialization: 0
+    cameraDeviceModeSetting: -1
+    maxSimultaneousImageTargets: 1
+    maxSimultaneousObjectTargets: 1
+    useDelayedLoadingObjectTargets: 0
+    modelTargetRecoWhileExtendedTracked: 1
+    version: 8.5.9
+    eulaAcceptedVersions: '{"Values":["8.5"]}'
+  database:
+    disableModelExtraction: 0
+  videoBackground:
+    numDivisions: 2
+    videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a,
+      type: 3}
+    videoBackgroundEnabled: 1
+  deviceTracker:
+    autoInitTracker: 0
+    autoStartTracker: 0
+    arcoreRequirement: 0
+    autoImportArcore: 0
+  smartTerrain:
+    autoInitTracker: 0
+    autoStartTracker: 0
+  webcam:
+    deviceNameSetInEditor: TOSHIBA Web Camera - HD
+    turnOffWebCam: 0
+    renderTextureLayer: 30
