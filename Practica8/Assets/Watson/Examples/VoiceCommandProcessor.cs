@@ -16,6 +16,7 @@ namespace IBM.Watsson.Examples{
         public List <GameObject> spawnPrefabs;
         public AudioSource audio;
         public AudioClip triggerSound;
+        
         void Awake()
         {
             s_VoiceInstance = this;
@@ -47,10 +48,6 @@ namespace IBM.Watsson.Examples{
                     else if(word == "cantar")
                     {
                         PlayMusic();
-                    }
-                    else if(word == "parar")
-                    {
-                        StopMusic();
                     }
                 }
                 break;
@@ -86,14 +83,6 @@ namespace IBM.Watsson.Examples{
         
             audio.clip = triggerSound;
             audio.Play();
-        }
-
-        void StopMusic()
-        {
-            audio.enabled = false;
-        
-            audio.clip = null;
-            audio.Stop();
         }
     }
 }
