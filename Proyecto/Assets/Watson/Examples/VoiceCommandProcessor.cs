@@ -12,12 +12,14 @@ namespace IBM.Watsson.Examples{
         public OnVoiceCommand onVoiceCommand;
         public List<string> actions;
         public List<string> specialActions;
-        public GameObject persona;
-        public List <GameObject> spawnPrefabs;
+        //public GameObject persona;
+        public List <GameObject> kanjis;
+        public GameObject panel;
         
         void Awake()
         {
             s_VoiceInstance = this;
+
         }
 
         public void Create(string transcript)
@@ -25,48 +27,39 @@ namespace IBM.Watsson.Examples{
             string [] words = transcript.Split(' ');
             foreach(var word in words)
             {
-                if(actions.Contains(word.ToLower()))
+                if(actions.Contains(word))
                 {
                     if(onVoiceCommand != null)
                     {
-                        onVoiceCommand.Invoke(word.ToLower());
+                        onVoiceCommand.Invoke(word);
                     }
                     return;
                 }
             }
             foreach(var word in words)
             {
-                if(specialActions.Contains(word.ToLower()))
+                if(specialActions.Contains(word))
                 {
-                    if(word == "invocar")
+                    if(word == "漢字"　|| word == "感じ"　|| word　== "かんじ")
                     {
-                        SpawnObject(words);
+                        SpawnObject(words);  
                     }
                 }
                 break;
-            }                 
+            }                
         }
 
         void SpawnObject(string[] words)
         {
             foreach(var word in words)
             {
-                foreach(var prefab in spawnPrefabs)
+                foreach(var prefab in kanjis)
                 {
-                    if(prefab.name == word.ToLower())
-                    {
-                        if(prefab.name == "sacerdotisa" || prefab.name == "ermitaño")
-                        {
-                            persona = Instantiate(prefab, new Vector3(0f,0.3f,-0.3f), Quaternion.identity);
-                        }
-                        else
-                        {
-                            persona = Instantiate(prefab, new Vector3(0f,0f,0f), Quaternion.identity);
-                        }                       
-                    }
+                    panel.SetActive(true);
+                    if(prefab.name == word)
+                        prefab.SetActive(true);                          
                     //break;
                 }
-                Destroy(persona,3);
             }
         }
     }
