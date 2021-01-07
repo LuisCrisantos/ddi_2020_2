@@ -6,8 +6,9 @@ public class PanelInteract : Interactable
 {
     public float triggerInteractionTime = 1f;
     public float interactionTimer = 0f;
-    private bool timerRunning = false;
+    public bool timerRunning = false;
     public GameObject panel;
+    public List <GameObject> animals;
 
     void Update()
         {
@@ -32,6 +33,11 @@ public class PanelInteract : Interactable
             timerRunning = false;
             interactionTimer = 0f;
             panel.SetActive(false);
+            foreach(var prefab in animals)
+            {
+                prefab.SetActive(false);                          
+
+            }
         }
     }
 
@@ -39,4 +45,10 @@ public class PanelInteract : Interactable
     {
         panel.SetActive(true);
     }
+
+    public bool GetBool()
+    {
+        return timerRunning;
+    }
+
 }

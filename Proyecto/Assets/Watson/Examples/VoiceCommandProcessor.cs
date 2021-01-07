@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IBM.Watsson.Examples{
 
-    public class VoiceCommandProcessor : MonoBehaviour
+    public class VoiceCommandProcessor : PanelInteract
     {
         static protected VoiceCommandProcessor s_VoiceInstance;
         static public VoiceCommandProcessor Instance {get{return s_VoiceInstance;}}
@@ -14,16 +14,25 @@ namespace IBM.Watsson.Examples{
         public List<string> specialActions;
         //public GameObject persona;
         public List <GameObject> kanjis;
-        public GameObject panel;
+        public GameObject aux;
+        public bool flag;
+        public PanelInteract myScript;
+        //public GameObject panel;
         
         void Awake()
         {
             s_VoiceInstance = this;
+            //myScript = GetComponent<PanelInteract>();
 
         }
 
-        public void Create(string transcript)
+        void Update()
         {
+            flag =  myScript.timerRunning;
+        }
+
+        public void Create(string transcript)
+        {  
             string [] words = transcript.Split(' ');
             foreach(var word in words)
             {
@@ -50,15 +59,15 @@ namespace IBM.Watsson.Examples{
         }
 
         void SpawnObject(string[] words)
-        {
+        {      
             foreach(var word in words)
             {
                 foreach(var prefab in kanjis)
                 {
-                    panel.SetActive(true);
-                    if(prefab.name == word)
-                        prefab.SetActive(true);                          
-                    //break;
+                    //panel.SetActive(true);
+                    if((prefab.name == word) && flag)                       
+                        prefab.SetActive(true);
+                    break;
                 }
             }
         }
