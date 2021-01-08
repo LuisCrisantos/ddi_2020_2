@@ -21,7 +21,7 @@ namespace IBM.Watsson.Examples{
         {
             s_VoiceInstance = this;
         }
-        
+
         public void Create(string transcript)
         {  
             string [] words = transcript.Split(' ');
@@ -59,9 +59,10 @@ namespace IBM.Watsson.Examples{
                     {
                         flag = scripts.timerRunning;
                         if((prefab.name == word) && (scripts.animal.name == word) && flag)                                  
-                        {  
                             prefab.SetActive(true);
-                        }
+
+                        if(word == "やめて" || word == "やめろ" || word == "やめてください")
+                            prefab.SetActive(false);
                     }
                 }
             }
