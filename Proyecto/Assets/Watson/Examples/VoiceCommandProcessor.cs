@@ -15,18 +15,13 @@ namespace IBM.Watsson.Examples{
         public List <GameObject> kanjis;
         public GameObject aux;
         public bool flag;
-        public PanelInteract myScript = null;
+        public List <PanelInteract> myScript;
         
         void Awake()
         {
             s_VoiceInstance = this;
         }
-
-        void Update()
-        {
-            flag =  myScript.timerRunning;
-        }
-
+        
         public void Create(string transcript)
         {  
             string [] words = transcript.Split(' ');
@@ -57,15 +52,16 @@ namespace IBM.Watsson.Examples{
         void SpawnObject(string[] words)
         {   
             foreach(var word in words)
-            {
+            {    
                 foreach(var prefab in kanjis)
-                {
-                    if(prefab.name == word)
+                {     
+                    foreach(var scripts in myScript)
                     {
-                        aux = GameObject.Find(word);
-                        myScript = aux.GetComponent<PanelInteract>();
-                        if((myScript.animal.name == word) && flag)                       
+                        flag = scripts.timerRunning;
+                        if((prefab.name == word) && (scripts.animal.name == word) && flag)                                  
+                        {  
                             prefab.SetActive(true);
+                        }
                     }
                 }
             }
