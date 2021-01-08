@@ -65,9 +65,9 @@ namespace IBM.Watsson.Examples{
                 foreach(var prefab in kanjis)
                 {
                     //panel.SetActive(true);
-                    if((prefab.name == word) && flag)                       
+                    if((prefab.name == word) && (myScript.animal.name == word) && flag)                       
                         prefab.SetActive(true);
-                    break;
+                    //break;
                 }
             }
         }

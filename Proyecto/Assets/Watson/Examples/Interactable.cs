@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public bool IsInsideZone;
+    //public bool IsInsideZone;
     public virtual void Interact()
     {
         Debug.Log("Ejecutando Interacción...");
@@ -29,7 +29,7 @@ public class Interactable : MonoBehaviour
         {
             return;
         }
-        IsInsideZone = true;
+        //IsInsideZone = true;
     }
 
     void OnTriggerExit(Collider other)
@@ -38,6 +38,6 @@ public class Interactable : MonoBehaviour
         {
             return;
         }
-        IsInsideZone = false;
+        //IsInsideZone = false;
     }
 }
