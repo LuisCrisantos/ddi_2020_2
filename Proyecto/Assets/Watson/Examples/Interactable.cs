@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityStandardAssets.CrossPlatformInput;
 
 public class Interactable : MonoBehaviour
 {
-    //public bool IsInsideZone;
     public virtual void Interact()
     {
         Debug.Log("Ejecutando Interacción...");
@@ -13,14 +11,7 @@ public class Interactable : MonoBehaviour
 
     void Update()
     {
-        /*if(IsInsideZone && CrossPlatformInputManager.GetButtonDown("Fire1"))
-        {
-            Interact();
-        }
-        if(!IsInsideZone)
-        {
-            Debug.Log("");
-        }*/
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -29,7 +20,6 @@ public class Interactable : MonoBehaviour
         {
             return;
         }
-        //IsInsideZone = true;
     }
 
     void OnTriggerExit(Collider other)
@@ -38,6 +28,5 @@ public class Interactable : MonoBehaviour
         {
             return;
         }
-        //IsInsideZone = false;
     }
 }

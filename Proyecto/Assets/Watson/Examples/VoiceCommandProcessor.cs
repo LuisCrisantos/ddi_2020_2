@@ -12,18 +12,14 @@ namespace IBM.Watsson.Examples{
         public OnVoiceCommand onVoiceCommand;
         public List<string> actions;
         public List<string> specialActions;
-        //public GameObject persona;
         public List <GameObject> kanjis;
         public GameObject aux;
         public bool flag;
-        public PanelInteract myScript;
-        //public GameObject panel;
+        public PanelInteract myScript = null;
         
         void Awake()
         {
             s_VoiceInstance = this;
-            //myScript = GetComponent<PanelInteract>();
-
         }
 
         void Update()
@@ -49,7 +45,7 @@ namespace IBM.Watsson.Examples{
             {
                 if(specialActions.Contains(word))
                 {
-                    if(word == "漢字"　|| word == "感じ"　|| word　== "かんじ")
+                    if(word == "漢字"　|| word == "感じ"　|| word == "何時" || word　== "かんじ")
                     {
                         SpawnObject(words);  
                     }
@@ -59,15 +55,18 @@ namespace IBM.Watsson.Examples{
         }
 
         void SpawnObject(string[] words)
-        {      
+        {   
             foreach(var word in words)
             {
                 foreach(var prefab in kanjis)
                 {
-                    //panel.SetActive(true);
-                    if((prefab.name == word) && (myScript.animal.name == word) && flag)                       
-                        prefab.SetActive(true);
-                    //break;
+                    if(prefab.name == word)
+                    {
+                        aux = GameObject.Find(word);
+                        myScript = aux.GetComponent<PanelInteract>();
+                        if((myScript.animal.name == word) && flag)                       
+                            prefab.SetActive(true);
+                    }
                 }
             }
         }
